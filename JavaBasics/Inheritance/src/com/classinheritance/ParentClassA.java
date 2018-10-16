@@ -2,7 +2,7 @@ package com.classinheritance;
 
 public class ParentClassA {
 
-    private String name ;
+    public String name ;
     public double x;
     public double y;
 
@@ -15,17 +15,19 @@ public class ParentClassA {
     }
 
     public double getX(){
+        System.out.println("parent x:"+x);
         return x;
     }
 
     public double getY(){
+        System.out.println("parent y:"+y);
         return y;
     }
 
     public double sum(){
-        System.out.println("value of x: "+x);
-        System.out.println("value of y: "+y);
-        System.out.println("sum of x+y: "+(x+y));
+        System.out.println("parent value of x: "+x);
+        System.out.println("parent value of y: "+y);
+        System.out.println("parent sum of x+y: "+(x+y));
         return x+y;
     }
 

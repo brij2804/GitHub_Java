@@ -6,9 +6,12 @@ public class MainClass {
         ParentClassA parentClassA = new ClassA();
         parentClassA.x= 10;
         parentClassA.y = 11;
+        parentClassA.setName("John");
         System.out.println(parentClassA.getX());
         System.out.println(parentClassA.getY());
         System.out.println(parentClassA.sum());
+        System.out.println(parentClassA.getName());
+        System.out.println(parentClassA.name);
     }
 
     public static void method2(){
@@ -21,6 +24,15 @@ public class MainClass {
     }
 
     public static void method3(){
+        ParentClassA parentClassA = new ParentClassA();
+        parentClassA.x= 10;
+        parentClassA.y = 11;
+        System.out.println(parentClassA.getX());
+        System.out.println(parentClassA.getY());
+        System.out.println(parentClassA.sum());
+    }
+
+    public static void method4(){
         ParentClassA parentClassA = new ParentClassA();
         parentClassA.x= 10;
         parentClassA.y = 11;
