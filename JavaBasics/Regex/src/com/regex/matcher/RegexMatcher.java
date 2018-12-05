@@ -17,4 +17,33 @@ public class RegexMatcher {
             System.out.println(grp0);
         }
     }
+    public void method2() {
+        Pattern pattern = Pattern.compile(RegexConstants.PATTERN_INTEGERS_OF_UNDEFINED_LENGHT);
+        Matcher matcher = pattern.matcher(InputStrings.INPUT_NUMBER);
+        if (matcher.find()) {
+            String grp0 = matcher.group(0);
+            System.out.println(grp0);
+        }
+    }
+    public void method3() {
+        Pattern pattern = Pattern.compile(RegexConstants.PATTERN_INTEGERS_OF_UNDEFINED_LENGHT);
+        Matcher matcher = pattern.matcher(InputStrings.INPUT_NUMBER_1);
+        if (matcher.find()) {
+            String grp0 = matcher.group(0);
+            System.out.println(grp0);
+        }else{
+            System.out.println("pattern does not match");
+        }
+    }
+
+    public void method4() {
+        Pattern pattern = Pattern.compile(RegexConstants.PATTERN_INTEGER_OF_MAX_LENGTH_10);
+        Matcher matcher = pattern.matcher(InputStrings.INPUT_NUMBER_1);
+        if (matcher.find()) {
+            String grp0 = matcher.group(0);
+            System.out.println(grp0);
+        }else{
+            System.out.println("pattern does not match");
+        }
+    }
 }
