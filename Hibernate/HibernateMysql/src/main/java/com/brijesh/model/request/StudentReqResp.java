@@ -1,12 +1,12 @@
 package com.brijesh.model.request;
 
-public class StudentRequest {
+public class StudentReqResp {
 
     private String firstName;
     private String lastName;
     private Integer rollNumber;
     private Integer age;
-    private AddressRequest addressRequest;
+    private AddressReqResp addressReqResp;
 
     public String getFirstName() {
         return firstName;
@@ -40,11 +40,11 @@ public class StudentRequest {
         this.age = age;
     }
 
-    public AddressRequest getAddressRequest() {
-        return addressRequest;
+    public AddressReqResp getAddressReqResp() {
+        return addressReqResp;
     }
 
-    public void setAddressRequest(AddressRequest addressRequest) {
-        this.addressRequest = addressRequest;
+    public void setAddressReqResp(AddressReqResp addressReqResp) {
+        this.addressReqResp = addressReqResp;
     }
 }

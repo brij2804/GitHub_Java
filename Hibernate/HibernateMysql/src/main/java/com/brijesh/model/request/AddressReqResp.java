@@ -1,6 +1,6 @@
 package com.brijesh.model.request;
 
-public class AddressRequest {
+public class AddressReqResp {
 
     private String addressLine1;
     private String addressLine2;
