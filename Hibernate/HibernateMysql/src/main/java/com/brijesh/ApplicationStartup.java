@@ -1,4 +1,4 @@
-package com.brijesh.college.startup;
+package com.brijesh;
 
 
 import org.springframework.boot.SpringApplication;
