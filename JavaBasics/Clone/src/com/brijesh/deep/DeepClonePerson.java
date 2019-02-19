@@ -13,10 +13,26 @@ public class DeepClonePerson implements Cloneable{
       this.address=address;
     }
 
-    protected Object clone() throws CloneNotSupportedException{
+    public Object clone() throws CloneNotSupportedException{
       DeepClonePerson deepClonePerson= (DeepClonePerson) super.clone();
       deepClonePerson.name = (Name) name.clone();
       deepClonePerson.address = (Address) address.clone();
       return deepClonePerson;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

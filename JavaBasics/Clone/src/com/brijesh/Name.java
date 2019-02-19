@@ -1,6 +1,6 @@
 package com.brijesh;
 
-public class Name {
+public class Name implements Cloneable{
 
     private String firstName;
     private String lastName;

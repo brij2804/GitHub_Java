@@ -1,6 +1,6 @@
 package com.brijesh;
 
-public class Address {
+public class Address implements Cloneable{
 
     private String addressLine1;
 
