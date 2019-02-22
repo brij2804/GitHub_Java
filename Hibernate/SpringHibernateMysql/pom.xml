@@ -27,6 +27,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <hibernate.version>5.4.1.Final</hibernate.version>
         <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
+        <tomcat-dbcp.version>9.0.16</tomcat-dbcp.version>
     </properties>
 
     <dependencies>
@@ -58,6 +59,12 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>${tomcat-dbcp.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <resources>
