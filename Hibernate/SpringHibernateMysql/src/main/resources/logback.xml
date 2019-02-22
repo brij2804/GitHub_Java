@@ -32,16 +32,13 @@
         </rollingPolicy>
     </appender>
 
-    <!-- LOG everything at INFO level -->
+
+    <logger name="com.brijesh" level="DEBUG" />
+    <logger name="org.springframework" level="WARN" />
+
     <root level="DEBUG">
         <appender-ref ref="RollingFile"/>
         <appender-ref ref="Console"/>
     </root>
-
-    <!-- LOG "com.brijesh*" at DEBUG level -->
-    <logger name="com.brijesh" level="DEBUG" additivity="false">
-        <appender-ref ref="RollingFile"/>
-        <appender-ref ref="Console"/>
-    </logger>
 
 </configuration>
