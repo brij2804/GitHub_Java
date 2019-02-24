@@ -1,4 +1,4 @@
-package com.brijesh.persistence.dao;
+package com.brijesh.persistence.dao.common;
 
 import com.google.common.base.Preconditions;
 
