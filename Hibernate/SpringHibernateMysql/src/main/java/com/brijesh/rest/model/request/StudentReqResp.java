@@ -1,4 +1,4 @@
-package com.brijesh.model.request;
+package com.brijesh.rest.model.request;
 
 public class StudentReqResp {
 
