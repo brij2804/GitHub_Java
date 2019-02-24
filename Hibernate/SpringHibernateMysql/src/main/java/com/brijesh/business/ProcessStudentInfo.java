@@ -1,7 +1,8 @@
 package com.brijesh.business;
 
 import com.brijesh.exception.CollegeException;
-import com.brijesh.model.request.StudentReqResp;
+import com.brijesh.rest.model.request.StudentReqResp;
+
 
 public interface ProcessStudentInfo {
 

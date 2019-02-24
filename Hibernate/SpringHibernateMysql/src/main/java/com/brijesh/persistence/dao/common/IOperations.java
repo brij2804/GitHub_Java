@@ -1,4 +1,4 @@
-package com.brijesh.persistence.dao;
+package com.brijesh.persistence.dao.common;
 
 import java.io.Serializable;
 import java.util.List;
