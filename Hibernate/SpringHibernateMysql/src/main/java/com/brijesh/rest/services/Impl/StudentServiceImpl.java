@@ -1,6 +1,6 @@
 package com.brijesh.rest.services.Impl;
 
-import com.brijesh.common.CollegeConstants;
+import com.brijesh.common.CompanyConstants;
 import com.brijesh.exception.CollegeException;
 import com.brijesh.rest.model.request.StudentReqResp;
 import com.brijesh.rest.services.StudentService;
@@ -19,7 +19,7 @@ public class StudentServiceImpl implements StudentService {
         try {
 
         } catch (Throwable throwable) {
-            throw new CollegeException(CollegeConstants.ERROR_PROCESSING_STUDENT_SERVICE_REQUEST, throwable);
+            throw new CollegeException(CompanyConstants.ERROR_PROCESSING_STUDENT_SERVICE_REQUEST, throwable);
         }
         return studentList;
     }
@@ -29,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
         try {
 
         } catch (Throwable throwable) {
-            throw new CollegeException(CollegeConstants.ERROR_PROCESSING_STUDENT_SERVICE_REQUEST, throwable);
+            throw new CollegeException(CompanyConstants.ERROR_PROCESSING_STUDENT_SERVICE_REQUEST, throwable);
         }
         return studentResp;
     }

@@ -1,6 +1,6 @@
 package com.brijesh.rest.services;
 
-import com.brijesh.common.CollegeConstants;
+import com.brijesh.common.CompanyConstants;
 import com.brijesh.exception.CollegeException;
 
 import com.brijesh.rest.model.request.StudentReqResp;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public interface StudentService {
 
-    @RequestMapping(value = CollegeConstants.STUDENT_SERVICE,
+    @RequestMapping(value = CompanyConstants.STUDENT_SERVICE,
             method = RequestMethod.GET,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -21,7 +21,7 @@ public interface StudentService {
     public List<StudentReqResp> getStudentDetails(@RequestBody StudentReqResp studentReqResp) throws CollegeException;
 
     @RequestMapping(
-            value = CollegeConstants.STUDENT_SERVICE_FOR_ID,
+            value = CompanyConstants.STUDENT_SERVICE_FOR_ID,
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public StudentReqResp getStudentInfo(@PathVariable("id") String studentId) throws CollegeException;
