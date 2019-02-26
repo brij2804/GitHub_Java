@@ -1,4 +1,4 @@
-package com.brijesh.rest.services;
+package com.brijesh.rest.controller;
 
 import com.brijesh.common.CompanyConstants;
 import com.brijesh.rest.model.request.EmployeeReqResp;
@@ -11,14 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+
 public interface EmployeeService {
 
-    @RequestMapping(value = CompanyConstants.EMPLOYEE_SERVICE,
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    @ResponseStatus(HttpStatus.OK)
     public List<EmployeeReqResp> getEmployeeDetails();
 
 
