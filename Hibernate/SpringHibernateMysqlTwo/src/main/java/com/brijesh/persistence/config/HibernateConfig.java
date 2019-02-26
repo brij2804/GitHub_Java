@@ -8,11 +8,11 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
+//@Configuration
+//@EnableTransactionManagement
 public class HibernateConfig {
 
-    @Autowired
+   /* @Autowired
     private ApplicationContext context;
 
     @Bean
@@ -27,7 +27,7 @@ public class HibernateConfig {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(getSessionFactory().getObject());
         return transactionManager;
-    }
+    }*/
 }
 
 
