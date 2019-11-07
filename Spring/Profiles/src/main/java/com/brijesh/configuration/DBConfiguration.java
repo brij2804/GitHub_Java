@@ -5,25 +5,23 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
-@Configuration
-
+@Component
+@ConfigurationProperties("spring.datasource")
 public class DBConfiguration {
 
-    private String driveClassName;
-
+    private String driverClassName;
     private String url;
-
     private String username;
-
     private String password;
 
-    public String getDriveClassName() {
-        return driveClassName;
+    public String getDriverClassName() {
+        return driverClassName;
     }
 
-    public void setDriveClassName(String driveClassName) {
-        this.driveClassName = driveClassName;
+    public void setDriverClassName(String driverClassName) {
+        this.driverClassName = driverClassName;
     }
 
     public String getUrl() {
@@ -50,12 +48,13 @@ public class DBConfiguration {
         this.password = password;
     }
 
-    @ConfigurationProperties(prefix ="spring.datasource")
-    @Bean
-    public void DatabaseConnection(){
-        System.out.println("driver class name :"+driveClassName);
-        System.out.println("url :"+ url);
-        System.out.println("username :"+username);
-        System.out.println("password :"+password);
+    @Override
+    public String toString() {
+        return "ServerProperties{" +
+                "driverClassName='" + driverClassName + '\'' +
+                ", url=" + url + '\'' +
+                ", username=" + username + '\'' +
+                ", password=" + password + '\'' +
+                '}';
     }
 }

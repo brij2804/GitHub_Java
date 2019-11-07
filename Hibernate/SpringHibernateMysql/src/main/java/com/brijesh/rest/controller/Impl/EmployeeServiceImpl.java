@@ -46,8 +46,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @RequestMapping(value = "/company/v1/employee/one",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            method = RequestMethod.POST,
+            //produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.IMAGE_GIF_VALUE
     )
     @ResponseStatus(HttpStatus.OK)
     public EmployeeReqResp getEmployeeInfo() throws Exception {
