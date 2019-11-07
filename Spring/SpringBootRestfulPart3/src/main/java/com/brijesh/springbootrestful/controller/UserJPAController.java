@@ -18,9 +18,6 @@ import java.util.Optional;
 public class UserJPAController {
 
     @Autowired
-    private UserDaoService service;
-
-    @Autowired
     private UserRepository userRepository;
 
     @GetMapping("/jpa/users")
