@@ -1,3 +1,4 @@
+/*
 package com.brijesh.springbootrestful.config;
 
 import org.springframework.context.annotation.Bean;
@@ -25,3 +26,4 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO).produces(DEFAULT_PRODUCES_AND_CONSUMES).consumes(DEFAULT_PRODUCES_AND_CONSUMES);
     }
 }
+*/
