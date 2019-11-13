@@ -13,9 +13,9 @@ import java.util.Locale;
 @SpringBootApplication
 public class SpringbootRestfulApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootRestfulApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootRestfulApplication.class, args);
+    }
 
 	/*@Bean
 	public LocaleResolver localeResolver(){
@@ -24,12 +24,12 @@ public class SpringbootRestfulApplication {
 		return localeResolver;
 	}*/
 
-	@Bean
-	public LocaleResolver localeResolver(){
-		AcceptHeaderLocaleResolver  localeResolver = new AcceptHeaderLocaleResolver();
-		localeResolver.setDefaultLocale(Locale.US);
-		return localeResolver;
-	}
+    @Bean
+    public LocaleResolver localeResolver() {
+        AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
+        localeResolver.setDefaultLocale(Locale.US);
+        return localeResolver;
+    }
 
 	/*@Bean
 	public ResourceBundleMessageSource messageSource(){

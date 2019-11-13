@@ -28,7 +28,7 @@ public class User {
     //@ApiModelProperty(notes = "Birth date should be in the past")
     private Date birthDate;
 
-    @OneToMany(mappedBy ="user" )
+    @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
     public User(Integer id, String name, Date birthDate) {
