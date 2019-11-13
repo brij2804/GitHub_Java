@@ -1,1 +1,0 @@
-This project contains java Inheritance related code

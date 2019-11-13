@@ -1,1 +1,0 @@
-This project contains java 8 lamdba related code.
