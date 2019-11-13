@@ -1,1 +1,1 @@
-This repository will contain projects related to java basics like Lambda , exceptions etc.
+This repository contains projects related to java basics like Lambda , exceptions etc.
