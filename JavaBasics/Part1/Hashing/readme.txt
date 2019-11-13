@@ -1,0 +1,1 @@
+This project contains hash code , hashing, equals related code.
