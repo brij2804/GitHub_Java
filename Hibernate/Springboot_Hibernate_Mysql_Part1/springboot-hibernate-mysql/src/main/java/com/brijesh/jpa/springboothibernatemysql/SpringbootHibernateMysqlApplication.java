@@ -35,11 +35,11 @@ public class SpringbootHibernateMysqlApplication implements CommandLineRunner {
         System.out.println("\nfindAll()");
         repository.findAll().forEach(x -> System.out.println(x));
 
-        System.out.println("\nfindById(1L)");
+        System.out.println("\nfindById(1)");
         repository.findById(1).ifPresent(x -> System.out.println(x));
 
-        System.out.println("\nfindByName('Node')");
-        repository.findByName("Node").forEach(x -> System.out.println(x));
+        System.out.println("\nfindByName('Piku')");
+        repository.findByName("Piku").forEach(x -> System.out.println(x));
 
     }
 
