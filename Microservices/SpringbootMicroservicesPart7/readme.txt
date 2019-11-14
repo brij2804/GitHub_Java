@@ -36,3 +36,9 @@ scrape_configs:
 
     static_configs:
       - targets: ['localhost:8080','localhost:8081','localhost:8888','localhost:8000','localhost:8001','localhost:8100','localhost:8761','localhost:8765']
+
+
+
+----------------------------------------------adding Grafana to Prometheus----------------------------------------------
+
+https://prometheus.io/docs/visualization/grafana/
