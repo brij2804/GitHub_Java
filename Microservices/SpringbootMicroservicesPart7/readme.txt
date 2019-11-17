@@ -37,8 +37,26 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:8080','localhost:8081','localhost:8888','localhost:8000','localhost:8001','localhost:8100','localhost:8761','localhost:8765']
 
+-----------------------------
 
+ # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    static_configs:
+      - targets: ['localhost:9090']
 
 ----------------------------------------------adding Grafana to Prometheus----------------------------------------------
 
 https://prometheus.io/docs/visualization/grafana/
+
+-------------------------------------------------------------------------
+
+expression :
+
+http_requests_total{code!~"2.."}
+
+rate(http_requests_total[5m])
+
