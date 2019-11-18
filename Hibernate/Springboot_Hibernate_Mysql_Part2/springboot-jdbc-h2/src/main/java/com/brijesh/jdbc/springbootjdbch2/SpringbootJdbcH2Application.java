@@ -23,5 +23,7 @@ public class SpringbootJdbcH2Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         logger.info("All users -> {} ", dao.findAll());
+		logger.info("User id 10001 -> {}", dao.findById(10001));
+		logger.info("List of users by location -> {}", dao.findByLocation("Boston"));
     }
 }
