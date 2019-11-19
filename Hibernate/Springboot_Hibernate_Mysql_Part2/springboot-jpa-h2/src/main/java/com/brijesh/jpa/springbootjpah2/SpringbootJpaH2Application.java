@@ -32,5 +32,7 @@ public class SpringbootJpaH2Application implements CommandLineRunner {
 
 		Person personUp = new Person(10003, "Jumbo", "Bombay", new Date());
 		logger.info("Updating a person {}", personUp.toString(), repository.update(personUp));
+
+		repository.delete(10002);
     }
 }
