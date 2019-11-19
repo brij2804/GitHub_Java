@@ -25,12 +25,21 @@ public class SpringbootJdbcH2Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("All users -> {} ", dao.findAll());
+
+		logger.info("All users -> {} ", dao.findAll());
+
+		logger.info("All users using RowMapper-> {} ", dao.findAllRowMapper());
+
+
 		logger.info("User id 10001 -> {}", dao.findById(10001));
+
 		logger.info("List of users by location -> {}", dao.findByLocation("Boston"));
+
 		logger.info("Deleting 10002 -> No of Rows deleted -> {}", dao.deleteById(10002));
+
 		Person person = new Person(10010, "Ravi", "Bombay", new Date());
 		logger.info("Inserting person {}", person.toString(), dao.insert(person));
+
 		Person personUp = new Person(10010, "Jumbo", "Bombay", new Date());
 		logger.info("Updating a person {}", personUp.toString(), dao.update(personUp));
     }
