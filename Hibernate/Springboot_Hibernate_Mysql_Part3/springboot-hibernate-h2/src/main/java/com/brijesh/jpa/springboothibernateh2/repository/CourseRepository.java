@@ -15,4 +15,9 @@ public class CourseRepository {
     public Course findById(Long id) {
         return entityManager.find(Course.class, id);
     }
+
+    public void deleteById(Long id) {
+        Course course = findById(id);
+        entityManager.remove(course);
+    }
 }
