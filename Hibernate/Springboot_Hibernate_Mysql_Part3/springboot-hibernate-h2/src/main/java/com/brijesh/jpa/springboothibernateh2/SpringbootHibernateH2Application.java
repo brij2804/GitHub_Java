@@ -26,7 +26,7 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         Course course = courseRepository.findById(10001L);
         logger.info("Find by Id 10001-> {} ", course);
 
-        courseRepository.deleteById(10001L);
+        courseRepository.deleteById(10001l);
 
     }
 }
