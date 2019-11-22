@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SpringbootHibernateH2ApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }
