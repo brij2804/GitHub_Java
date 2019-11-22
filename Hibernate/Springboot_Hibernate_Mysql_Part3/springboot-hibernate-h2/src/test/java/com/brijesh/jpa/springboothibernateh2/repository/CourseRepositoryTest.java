@@ -48,4 +48,10 @@ public class CourseRepositoryTest {
         assertEquals("Chintu", course1.getName());
     }
 
+    @Test
+    @DirtiesContext
+    public void playWithEntityManager() {
+        repository.updatingWithoutCallingMerge();
+    }
+
 }
