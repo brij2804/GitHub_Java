@@ -111,4 +111,28 @@ public class CourseRepository {
         course2.setName("clearUsage -- course2 -- updated");
         entityManager.flush();
     }
+
+    /**
+     * After we call refresh for course1 all the updates made to the course1 will be lost.
+     * And course1 object will have data from database , after refresh is called.
+     */
+    public void refreshUsage() {
+
+        Course course1 = new Course("refreshUsage -- course1");
+        entityManager.persist(course1);
+        Course course2 = new Course("refreshUsage -- course2");
+        entityManager.persist(course2);
+        entityManager.flush();
+
+        // course1 and course2 are saved till above.
+
+        course1.setName("refreshUsage -- course1-- updated");
+        course2.setName("refreshUsage -- course2 -- updated");
+
+        // updates made to the course1 will be lost and course1 object will have data from database.
+        entityManager.refresh(course1);
+        logger.info("course1 after refresh -> {} ", course1);
+        logger.info("course2 after refresh -> {} ", course2);
+        entityManager.flush();
+    }
 }

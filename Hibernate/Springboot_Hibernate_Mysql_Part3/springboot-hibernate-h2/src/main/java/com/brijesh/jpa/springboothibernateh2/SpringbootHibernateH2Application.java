@@ -44,5 +44,7 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         courseRepository.detachUsage();
 
         courseRepository.clearUsage();
+
+        courseRepository.refreshUsage();
     }
 }
