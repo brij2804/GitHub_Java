@@ -46,9 +46,9 @@ public class CourseRepository {
      */
     public void updatingWithoutCallingMerge() {
         logger.info("updatingWithoutCallingMerge - start");
-        Course course = new Course("updatingWithoutCallingMerge entity manager");
+        Course course = new Course("updatingWithoutCallingMerge ");
         entityManager.persist(course);
-        course.setName("Playing with entity manager updated");
+        course.setName("updatingWithoutCallingMerge --  updated");
     }
 
     /**
@@ -56,18 +56,59 @@ public class CourseRepository {
      */
     public void flushUsage() {
 
-        Course course1 = new Course("Playing with entity manager");
+        Course course1 = new Course("flushUsage -- course1");
         entityManager.persist(course1);
         entityManager.flush();
 
-        course1.setName("Playing with entity manager updated");
+        course1.setName("flushUsage -- course1 -- updated");
         entityManager.flush();
 
-        Course course2 = new Course("Playing with entity manager -> course2");
+        Course course2 = new Course("flushUsage -- course2");
         entityManager.persist(course2);
         entityManager.flush();
 
-        course2.setName("Playing with entity manager updated -> course2");
+        course2.setName("flushUsage -- course2 -- updated");
+        entityManager.flush();
+    }
+
+    /**
+     * After detach is called whtever changes are made to the course1 and course2 object, it will not be saved in database.
+     */
+    public void detachUsage() {
+
+        Course course1 = new Course("detachUsage -- course1");
+        entityManager.persist(course1);
+        Course course2 = new Course("detachUsage -- course2");
+        entityManager.persist(course2);
+
+        entityManager.flush();
+
+        entityManager.detach(course1);
+        entityManager.detach(course2);
+
+        course1.setName("detachUsage -- course1 -- updated ");
+        entityManager.flush();
+        course2.setName("detachUsage -- course2 -- updated");
+        entityManager.flush();
+    }
+
+    /**
+     * After clear is called whtever changes are made to the course1 and course2 object,all the objects, it will not be saved in database.
+     */
+    public void clearUsage() {
+
+        Course course1 = new Course("clearUsage -- course1");
+        entityManager.persist(course1);
+        Course course2 = new Course("clearUsage -- course2");
+        entityManager.persist(course2);
+
+        entityManager.flush();
+
+        entityManager.clear();
+
+        course1.setName("clearUsage -- course1-- updated");
+        entityManager.flush();
+        course2.setName("clearUsage -- course2 -- updated");
         entityManager.flush();
     }
 }

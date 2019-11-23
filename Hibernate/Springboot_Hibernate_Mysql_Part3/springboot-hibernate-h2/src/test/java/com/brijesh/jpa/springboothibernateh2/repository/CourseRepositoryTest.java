@@ -58,4 +58,9 @@ public class CourseRepositoryTest {
         repository.flushUsage();
     }
 
+    @Test
+    public void clearUsage() {
+        repository.clearUsage();
+    }
+
 }
