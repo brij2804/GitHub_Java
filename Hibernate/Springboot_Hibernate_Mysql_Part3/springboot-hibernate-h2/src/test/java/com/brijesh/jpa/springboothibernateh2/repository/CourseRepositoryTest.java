@@ -49,9 +49,13 @@ public class CourseRepositoryTest {
     }
 
     @Test
-    @DirtiesContext
-    public void playWithEntityManager() {
+    public void updatingWithoutCallingMerge() {
         repository.updatingWithoutCallingMerge();
+    }
+
+    @Test
+    public void flushUsage() {
+        repository.flushUsage();
     }
 
 }

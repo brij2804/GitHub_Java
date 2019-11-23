@@ -51,7 +51,9 @@ public class CourseRepository {
         course.setName("Playing with entity manager updated");
     }
 
-
+    /**
+     * After every flush the data will be saved in database.
+     */
     public void flushUsage() {
 
         Course course1 = new Course("Playing with entity manager");
