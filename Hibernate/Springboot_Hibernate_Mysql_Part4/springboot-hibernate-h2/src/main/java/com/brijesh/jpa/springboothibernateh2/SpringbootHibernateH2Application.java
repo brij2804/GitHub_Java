@@ -1,6 +1,7 @@
 package com.brijesh.jpa.springboothibernateh2;
 
-import com.brijesh.jpa.springboothibernateh2.entity.Course;
+
+import com.brijesh.jpa.springboothibernateh2.repository.CourseJPQLRepository;
 import com.brijesh.jpa.springboothibernateh2.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +18,20 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
     @Autowired
     CourseRepository courseRepository;
 
+    @Autowired
+    CourseJPQLRepository courseJPQL;
+
     public static void main(String[] args) {
         SpringApplication.run(SpringbootHibernateH2Application.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
+        runRepositoryMethods();
+        runJPQLMethods();
+    }
+
+    public void runRepositoryMethods() {
         //Course course = courseRepository.findById(10001L);
         //logger.info("Find by Id 10001-> {} ", course);
 
@@ -46,5 +55,11 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         courseRepository.clearUsage();
 
         courseRepository.refreshUsage();
+    }
+
+    public void runJPQLMethods() {
+        courseJPQL.jpql_basic();
+        courseJPQL.jpql_typedQuery();
+        courseJPQL.jpql_where();
     }
 }
