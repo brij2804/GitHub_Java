@@ -1,9 +1,6 @@
 package com.brijesh.jpa.springboothibernateh2.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "course")
@@ -13,6 +10,7 @@ public class Course {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "fullname", nullable = false)
     private String name;
 
     public Course(String name) {
