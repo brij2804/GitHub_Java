@@ -22,20 +22,27 @@ public class CourseRepository {
     private EntityManager entityManager;
 
     public Course findById(Long id) {
-        return entityManager.find(Course.class, id);
+        logger.info(" CourseRepository - findById method starts-> {} ");
+        Course course = entityManager.find(Course.class, id);
+        logger.info(" CourseRepository - findById method ends-> {} ");
+        return course;
     }
 
     public void deleteById(Long id) {
+        logger.info(" CourseRepository - deleteById method starts-> {} ");
         Course course = findById(id);
         entityManager.remove(course);
+        logger.info(" CourseRepository - deleteById method ends-> {} ");
     }
 
     public Course save(Course course) {
+        logger.info(" CourseRepository - save method starts-> {} ");
         if (course.getId() == null) {
             entityManager.persist(course);
         } else {
             entityManager.merge(course);
         }
+        logger.info(" CourseRepository - save method ends-> {} ");
         return course;
     }
 
@@ -45,17 +52,18 @@ public class CourseRepository {
      * of one transaction.
      */
     public void updatingWithoutCallingMerge() {
-        logger.info("updatingWithoutCallingMerge - start");
+        logger.info(" CourseRepository - updatingWithoutCallingMerge method starts-> {} ");
         Course course = new Course("updatingWithoutCallingMerge ");
         entityManager.persist(course);
         course.setName("updatingWithoutCallingMerge --  updated");
+        logger.info(" CourseRepository - updatingWithoutCallingMerge method ends-> {} ");
     }
 
     /**
      * After every flush the data will be saved in database.
      */
     public void flushUsage() {
-
+        logger.info(" CourseRepository - flushUsage method starts-> {} ");
         Course course1 = new Course("flushUsage -- course1");
         entityManager.persist(course1);
         entityManager.flush();
@@ -69,13 +77,14 @@ public class CourseRepository {
 
         course2.setName("flushUsage -- course2 -- updated");
         entityManager.flush();
+        logger.info(" CourseRepository - flushUsage method ends-> {} ");
     }
 
     /**
      * After detach is called whtever changes are made to the course1 and course2 object, it will not be saved in database.
      */
     public void detachUsage() {
-
+        logger.info(" CourseRepository - detachUsage method starts-> {} ");
         Course course1 = new Course("detachUsage -- course1");
         entityManager.persist(course1);
         Course course2 = new Course("detachUsage -- course2");
@@ -90,13 +99,14 @@ public class CourseRepository {
         entityManager.flush();
         course2.setName("detachUsage -- course2 -- updated");
         entityManager.flush();
+        logger.info(" CourseRepository - detachUsage method ends-> {} ");
     }
 
     /**
      * After clear is called whtever changes are made to the course1 and course2 object,all the objects, it will not be saved in database.
      */
     public void clearUsage() {
-
+        logger.info(" CourseRepository - clearUsage method starts-> {} ");
         Course course1 = new Course("clearUsage -- course1");
         entityManager.persist(course1);
         Course course2 = new Course("clearUsage -- course2");
@@ -110,6 +120,7 @@ public class CourseRepository {
         entityManager.flush();
         course2.setName("clearUsage -- course2 -- updated");
         entityManager.flush();
+        logger.info(" CourseRepository - clearUsage method ends-> {} ");
     }
 
     /**
@@ -117,7 +128,7 @@ public class CourseRepository {
      * And course1 object will have data from database , after refresh is called.
      */
     public void refreshUsage() {
-
+        logger.info(" CourseRepository - refreshUsage method starts-> {} ");
         Course course1 = new Course("refreshUsage -- course1");
         entityManager.persist(course1);
         Course course2 = new Course("refreshUsage -- course2");
@@ -134,5 +145,18 @@ public class CourseRepository {
         logger.info("course1 after refresh -> {} ", course1);
         logger.info("course2 after refresh -> {} ", course2);
         entityManager.flush();
+        logger.info(" CourseRepository - refreshUsage method ends-> {} ");
+    }
+
+    /**
+     * Testing the nullability of the column. Column tag is marked as nullable=false.
+     */
+    public void checkNullability(){
+        logger.info(" CourseRepository - checkNullability method starts-> {} ");
+        Course course = new Course("Checking the nullability");
+        course.setName(null);
+        entityManager.persist(course);
+        entityManager.flush();
+        logger.info(" CourseRepository - checkNullability method ends -> {} ");
     }
 }
