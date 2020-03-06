@@ -27,4 +27,10 @@ public class CourseJPQLRepositoryTest {
     public void jpql_typedQuery() {
         courseJPQL.jpql_typedQuery();
     }
+
+    @Test
+    public void jpql_namedquery() {
+        courseJPQL.jpql_namedquery();
+    }
+
 }

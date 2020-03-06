@@ -39,4 +39,10 @@ public class CourseJPQLRepository {
         logger.info("select c from Course c where name like '%Brijesh' -> {}", resultList);
     }
 
+    public void jpql_namedquery() {
+        Query query = entityManager.createNamedQuery("query_get_all_courses");
+        List resultList = query.getResultList();
+        logger.info("result list using jpql_namedquery-> {}", resultList);
+    }
+
 }
