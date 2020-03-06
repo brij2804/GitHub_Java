@@ -2,6 +2,7 @@ package com.brijesh.jpa.springboothibernateh2;
 
 
 import com.brijesh.jpa.springboothibernateh2.repository.CourseJPQLRepository;
+import com.brijesh.jpa.springboothibernateh2.repository.CourseNativeRepository;
 import com.brijesh.jpa.springboothibernateh2.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,9 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
 
     @Autowired
     CourseJPQLRepository courseJPQL;
+
+    @Autowired
+    CourseNativeRepository courseNative;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootHibernateH2Application.class, args);
@@ -67,5 +71,13 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         courseJPQL.jpql_where();
         courseJPQL.jpql_namedquery();
         courseJPQL.jpql_where_namedquery();
+    }
+
+    public void runNativeMethods() {
+        courseNative.native_queries_basic();
+       /* courseNative.jpql_typedQuery();
+        courseNative.jpql_where();
+        courseNative.jpql_namedquery();
+        courseNative.jpql_where_namedquery();*/
     }
 }
