@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -45,24 +44,6 @@ public class CourseNativeRepository {
         Query query = entityManager.createNativeQuery(" Update course set last_updated_date=sysdate()", Course.class);
         int rows = query.executeUpdate();
         logger.info("number of rows updated native_query_to_update -> {}", rows);
-    }
-
-    public void jpql_where() {
-        TypedQuery<Course> query = entityManager.createQuery("select c from Course c where fullname like 'Brijesh%'", Course.class);
-        List<Course> resultList = query.getResultList();
-        logger.info("select c from Course c where name like '%Brijesh' -> {}", resultList);
-    }
-
-    public void jpql_namedquery() {
-        Query query = entityManager.createNamedQuery("query_get_all_courses");
-        List resultList = query.getResultList();
-        logger.info("result list using jpql_namedquery-> {}", resultList);
-    }
-
-    public void jpql_where_namedquery() {
-        TypedQuery<Course> query = entityManager.createNamedQuery("query_get_brijesh_courses", Course.class);
-        List<Course> resultList = query.getResultList();
-        logger.info("result list using jpql_where_namedquery -> {}", resultList);
     }
 
 }
