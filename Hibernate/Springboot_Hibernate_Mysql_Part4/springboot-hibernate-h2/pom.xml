@@ -12,7 +12,7 @@
     <artifactId>springboot-hibernate-h2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-hibernate-h2</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project of Hibernate and JPA</description>
 
     <properties>
         <java.version>11</java.version>
