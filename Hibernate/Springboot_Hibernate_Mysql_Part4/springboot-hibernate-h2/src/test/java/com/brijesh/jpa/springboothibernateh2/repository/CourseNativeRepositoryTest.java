@@ -24,18 +24,22 @@ public class CourseNativeRepositoryTest {
             courseNativeRepository.native_queries_basic();
         }
 
-        /*@Test
-        public void jpql_typedQuery() {
-            courseJPQL.jpql_typedQuery();
+        @Test
+        public void native_query_parameter() {
+                courseNativeRepository.native_query_parameter();
         }
 
         @Test
-        public void jpql_namedquery() {
-            courseJPQL.jpql_namedquery();
+        public void native_query_named_parameter() {
+                courseNativeRepository.native_query_named_parameter();
         }
 
         @Test
-        public void jpql_where_namedquery() {
-            courseJPQL.jpql_where_namedquery();*/
+        public void native_query_to_update() {
+                courseNativeRepository.native_query_to_update();
+        }
+
+
+
 
 }

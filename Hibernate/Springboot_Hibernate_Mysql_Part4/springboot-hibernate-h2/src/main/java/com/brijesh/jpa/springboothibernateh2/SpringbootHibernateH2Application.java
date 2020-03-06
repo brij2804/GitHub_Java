@@ -33,9 +33,11 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         runRepositoryMethods();
         runJPQLMethods();
+        runNativeMethods();
     }
 
     public void runRepositoryMethods() {
+        logger.info("runRepositoryMethods {################################################################################} ");
         //Course course = courseRepository.findById(10001L);
         //logger.info("Find by Id 10001-> {} ", course);
 
@@ -63,21 +65,25 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         //courseRepository.checkNullability();
 
         courseRepository.timeStampMethod();
+        logger.info("runRepositoryMethods {################################################################################} ");
     }
 
     public void runJPQLMethods() {
+        logger.info("runJPQLMethods {$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$} ");
         courseJPQL.jpql_basic();
         courseJPQL.jpql_typedQuery();
         courseJPQL.jpql_where();
         courseJPQL.jpql_namedquery();
         courseJPQL.jpql_where_namedquery();
+        logger.info("runJPQLMethods {$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$} ");
     }
 
     public void runNativeMethods() {
+        logger.info("runNativeMethods {@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@} ");
         courseNative.native_queries_basic();
-       /* courseNative.jpql_typedQuery();
-        courseNative.jpql_where();
-        courseNative.jpql_namedquery();
-        courseNative.jpql_where_namedquery();*/
+        courseNative.native_query_parameter();
+        courseNative.native_query_named_parameter();
+        courseNative.native_query_to_update();
+        logger.info("runNativeMethods {@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@} ");
     }
 }

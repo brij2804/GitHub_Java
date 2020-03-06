@@ -22,15 +22,29 @@ public class CourseNativeRepository {
     EntityManager entityManager;
 
     public void native_queries_basic() {
-        Query query = entityManager.createNativeQuery(" select * from Course ");
+        Query query = entityManager.createNativeQuery(" select * from Course ",Course.class);
         List resultList = query.getResultList();
         logger.info("result list using native_queries_basic-> {}", resultList);
     }
 
-    public void jpql_typedQuery() {
-        TypedQuery<Course> query = entityManager.createQuery(" select c from Course c", Course.class);
-        List<Course> resultList = query.getResultList();
-        logger.info("result list using jpql_typedQuery -> {}", resultList);
+    public void native_query_parameter() {
+        Query query = entityManager.createNativeQuery(" select * from Course where id = ?", Course.class);
+        query.setParameter(1,10001L);
+        List resultList = query.getResultList();
+        logger.info("result list using native_query_parameter -> {}", resultList);
+    }
+
+    public void native_query_named_parameter() {
+        Query query = entityManager.createNativeQuery(" select * from Course where id = :id", Course.class);
+        query.setParameter("id",10001L);
+        List resultList = query.getResultList();
+        logger.info("result list using native_query_named_parameter -> {}", resultList);
+    }
+
+    public void native_query_to_update() {
+        Query query = entityManager.createNativeQuery(" Update course set last_updated_date=sysdate()", Course.class);
+        int rows = query.executeUpdate();
+        logger.info("number of rows updated native_query_to_update -> {}", rows);
     }
 
     public void jpql_where() {
