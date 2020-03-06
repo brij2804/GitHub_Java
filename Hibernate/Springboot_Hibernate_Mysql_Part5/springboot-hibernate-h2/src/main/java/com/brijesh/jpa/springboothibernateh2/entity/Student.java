@@ -1,15 +1,10 @@
 package com.brijesh.jpa.springboothibernateh2.entity;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "course")
-public class Course {
-
+@Table(name = "student")
+public class Student {
     @Id
     @GeneratedValue
     private Long id;
@@ -17,17 +12,11 @@ public class Course {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @UpdateTimestamp
-    private LocalDateTime lastUpdatedDate;
-
-    @CreationTimestamp
-    private LocalDateTime createdDate;
-
-    public Course(String name) {
+    public Student(String name) {
         this.name = name;
     }
 
-    public Course() {
+    public Student() {
     }
 
     public Long getId() {
@@ -44,7 +33,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

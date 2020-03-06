@@ -31,9 +31,9 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        runRepositoryMethods();
+        /*runRepositoryMethods();
         runJPQLMethods();
-        runNativeMethods();
+        runNativeMethods();*/
     }
 
     public void runRepositoryMethods() {
