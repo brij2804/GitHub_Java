@@ -159,4 +159,14 @@ public class CourseRepository {
         entityManager.flush();
         logger.info(" CourseRepository - checkNullability method ends -> {} ");
     }
+
+    public void timeStampMethod(){
+        logger.info(" CourseRepository - timeStampMethod method starts-> {} ");
+        Course course1= new Course("Tommy");
+        entityManager.persist(course1);
+
+        Course course2 = findById(10001L);
+        course2.setName("BrijeshTimestamp");
+        logger.info(" CourseRepository - timeStampMethod method ends-> {} ");
+    }
 }

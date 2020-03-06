@@ -74,5 +74,10 @@ public class CourseRepositoryTest {
         repository.checkNullability();
     }
 
+    @Test
+    public void timeStampMethod(){
+        repository.timeStampMethod();
+    }
+
 
 }

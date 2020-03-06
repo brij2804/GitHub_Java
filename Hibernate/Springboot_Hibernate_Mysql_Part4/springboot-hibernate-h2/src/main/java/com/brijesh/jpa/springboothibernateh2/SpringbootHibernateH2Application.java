@@ -56,7 +56,9 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
 
         courseRepository.refreshUsage();
 
-        courseRepository.checkNullability();
+        //courseRepository.checkNullability();
+
+        courseRepository.timeStampMethod();
     }
 
     public void runJPQLMethods() {
