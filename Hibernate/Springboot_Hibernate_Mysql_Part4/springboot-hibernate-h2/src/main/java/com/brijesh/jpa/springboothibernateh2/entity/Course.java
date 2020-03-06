@@ -8,7 +8,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "course")
-@NamedQuery(name="query_get_all_courses",query="select c from Course c")
+
+@NamedQueries(value={
+        @NamedQuery(name="query_get_all_courses",
+                query="select c from Course c"),
+        @NamedQuery(name="query_get_brijesh_courses",
+                query="select c from Course c where fullname like 'Brijesh%'"),
+})
 public class Course {
 
     @Id

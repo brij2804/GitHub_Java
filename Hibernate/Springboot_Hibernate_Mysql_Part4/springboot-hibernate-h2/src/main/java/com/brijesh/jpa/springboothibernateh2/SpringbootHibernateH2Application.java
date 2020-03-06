@@ -65,5 +65,7 @@ public class SpringbootHibernateH2Application implements CommandLineRunner {
         courseJPQL.jpql_basic();
         courseJPQL.jpql_typedQuery();
         courseJPQL.jpql_where();
+        courseJPQL.jpql_namedquery();
+        courseJPQL.jpql_where_namedquery();
     }
 }

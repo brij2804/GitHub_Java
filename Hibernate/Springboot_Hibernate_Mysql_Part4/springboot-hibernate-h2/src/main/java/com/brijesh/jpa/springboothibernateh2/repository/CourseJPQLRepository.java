@@ -34,7 +34,7 @@ public class CourseJPQLRepository {
     }
 
     public void jpql_where() {
-        TypedQuery<Course> query = entityManager.createQuery("select c from Course c where name like '%Brijesh'", Course.class);
+        TypedQuery<Course> query = entityManager.createQuery("select c from Course c where fullname like 'Brijesh%'", Course.class);
         List<Course> resultList = query.getResultList();
         logger.info("select c from Course c where name like '%Brijesh' -> {}", resultList);
     }
@@ -43,6 +43,12 @@ public class CourseJPQLRepository {
         Query query = entityManager.createNamedQuery("query_get_all_courses");
         List resultList = query.getResultList();
         logger.info("result list using jpql_namedquery-> {}", resultList);
+    }
+
+    public void jpql_where_namedquery() {
+        TypedQuery<Course> query = entityManager.createNamedQuery("query_get_brijesh_courses", Course.class);
+        List<Course> resultList = query.getResultList();
+        logger.info("result list using jpql_where_namedquery -> {}", resultList);
     }
 
 }

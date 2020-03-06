@@ -33,4 +33,10 @@ public class CourseJPQLRepositoryTest {
         courseJPQL.jpql_namedquery();
     }
 
+    @Test
+    public void jpql_where_namedquery() {
+        courseJPQL.jpql_where_namedquery();
+    }
+
+
 }
