@@ -5,3 +5,9 @@
      d) Nginx
      e) etcd
      f) Thrift
+2) Microservices Log Aggregation tools:
+    a) Logstash, kibana, elastic search
+    b) Fluentd
+    c) Retrace
+    d) Graylog
+    
