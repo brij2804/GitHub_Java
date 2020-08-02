@@ -1,0 +1,7 @@
+1 ) Microservices Service Discovery tools:
+     a) Eureka
+     b) Consul
+     c) Zookeper
+     d) Nginx
+     e) etcd
+     f) Thrift
