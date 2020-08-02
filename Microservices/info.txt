@@ -10,4 +10,25 @@
     b) Fluentd
     c) Retrace
     d) Graylog
+3) Microservices API Gateway server tools:
+    a) Zuul
+    b) Kong
+    c) Amazon AWS 
+    d) Apigee
+4) Microservices Messaging tools:
+    a) Kafka
+    b) RabbitMQ
+    c) Amazon Simple Queue Service
+    d) Google Cloud Pub/Sub
+5) Microservices Monitoring tools:
+    a) Prometheus
+    b) Log stash
+6) Microservices Testing tools:
+    a) API Fortress
+    b) Postman
+    c) Tyk
+7) Microservice Orchestration tools:
+   a) Conductor
+   b) Zookeeper
+
     
